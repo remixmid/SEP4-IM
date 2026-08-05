@@ -2,9 +2,10 @@ import { render, screen } from "@testing-library/react";
 import { describe, expect, it } from "vitest";
 import App from "./App.jsx";
 
-describe("App foundation", () => {
-  it("renders the Smart Greenhouse heading", () => {
+describe("Authentication routes", () => {
+  it("shows the login page to an anonymous user", async () => {
+    window.location.hash = "#/login";
     render(<App />);
-    expect(screen.getByRole("heading", { name: "Smart Greenhouse" })).toBeInTheDocument();
+    expect(await screen.findByRole("heading", { name: "Welcome back" })).toBeInTheDocument();
   });
 });
