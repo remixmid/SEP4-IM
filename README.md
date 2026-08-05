@@ -1,8 +1,17 @@
 # Smart Greenhouse Interactive Media
 
-Stage 1 establishes the React and Vite frontend foundation. IoT and ML will be simulated later through asynchronous mock services.
+## Stage 2: Authentication
 
-## Local development
+The application now includes mock registration, login, session restoration, protected routes and automated authentication tests.
+
+Demo account:
+
+```text
+demo@greenhouse.local
+demo123
+```
+
+## Run locally
 
 ```bash
 cd sep4-react-app
@@ -10,7 +19,7 @@ npm ci
 npm run dev
 ```
 
-## Tests and quality checks
+## Test
 
 ```bash
 npm run lint
@@ -18,8 +27,10 @@ npm run test
 npm run build
 ```
 
-Deployment and Docker instructions are added in the next commits of this first milestone.
+## Docker deployment
 
-## Deployment
+```bash
+docker compose up --build -d
+```
 
-See [`docs/DEPLOYMENT.md`](docs/DEPLOYMENT.md) for local, Docker, Linux server and static hosting instructions.
+Open `http://localhost:5173`. Full deployment instructions are in `docs/DEPLOYMENT.md`.
