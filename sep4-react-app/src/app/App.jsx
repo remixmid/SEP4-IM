@@ -1,13 +1,21 @@
+import { HashRouter, Navigate, Route, Routes } from "react-router-dom";
+import { AuthProvider } from "../features/auth/context/AuthContextProvider.jsx";
+import ProtectedRoute from "../features/auth/components/ProtectedRoute.jsx";
+import LoginPage from "../features/auth/pages/LoginPage.jsx";
+import RegistrationPage from "../features/auth/pages/RegistrationPage.jsx";
+import DashboardPage from "../features/zones/pages/DashboardPage.jsx";
+
 export default function App() {
   return (
-    <main className="landing-page">
-      <span className="eyebrow">SEP4 Interactive Media</span>
-      <h1>Smart Greenhouse</h1>
-      <p>Frontend foundation for mocked greenhouse monitoring, recommendations and automation.</p>
-      <section className="foundation-card">
-        <h2>Development status</h2>
-        <p>The Vite application, testing environment and project structure are ready.</p>
-      </section>
-    </main>
+    <AuthProvider>
+      <HashRouter>
+        <Routes>
+          <Route path="/login" element={<LoginPage />} />
+          <Route path="/register" element={<RegistrationPage />} />
+          <Route path="/main" element={<ProtectedRoute><DashboardPage /></ProtectedRoute>} />
+          <Route path="*" element={<Navigate to="/login" replace />} />
+        </Routes>
+      </HashRouter>
+    </AuthProvider>
   );
 }
