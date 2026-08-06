@@ -5,6 +5,7 @@ import LoginPage from "../features/auth/pages/LoginPage.jsx";
 import RegistrationPage from "../features/auth/pages/RegistrationPage.jsx";
 import Layout from "../features/layout/components/Layout.jsx";
 import DashboardPage from "../features/zones/pages/DashboardPage.jsx";
+import ViewDataPage from "../features/measurements/pages/ViewDataPage.jsx";
 
 export default function App() {
   return (
@@ -15,6 +16,7 @@ export default function App() {
           <Route path="/register" element={<RegistrationPage />} />
           <Route element={<Layout />}>
             <Route path="/main" element={<ProtectedRoute><DashboardPage /></ProtectedRoute>} />
+            <Route path="/view-data/:zoneId" element={<ProtectedRoute><ViewDataPage /></ProtectedRoute>} />
           </Route>
           <Route path="*" element={<Navigate to="/login" replace />} />
         </Routes>
