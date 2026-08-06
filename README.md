@@ -1,36 +1,23 @@
 # Smart Greenhouse Interactive Media
 
-## Stage 2: Authentication
+## Stage 3: Greenhouse zones
 
-The application now includes mock registration, login, session restoration, protected routes and automated authentication tests.
+Growers can authenticate, create and delete greenhouse zones, select a crop type and restore data from LocalStorage. Unit and component tests cover authentication and zone management.
 
-Demo account:
-
-```text
-demo@greenhouse.local
-demo123
-```
-
-## Run locally
+## Commands
 
 ```bash
 cd sep4-react-app
 npm ci
 npm run dev
-```
-
-## Test
-
-```bash
-npm run lint
 npm run test
 npm run build
 ```
 
-## Docker deployment
+## Docker
 
 ```bash
 docker compose up --build -d
 ```
 
-Open `http://localhost:5173`. Full deployment instructions are in `docs/DEPLOYMENT.md`.
+See `docs/DEPLOYMENT.md` for deployment options.
