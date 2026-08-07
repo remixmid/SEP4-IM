@@ -1,10 +1,12 @@
 # Smart Greenhouse Interactive Media
 
-## Stage 3: Greenhouse zones
+## Stage 4: Mock IoT telemetry
 
-Growers can authenticate, create and delete greenhouse zones, select a crop type and restore data from LocalStorage. Unit and component tests cover authentication and zone management.
+The application now generates current sensor readings and deterministic 24-hour history for temperature, humidity and light. The dashboard and telemetry page display cards, charts and minimum, average and maximum statistics.
 
-## Commands
+All prior tests remain present, with new API and statistics tests added for this milestone.
+
+## Run and test
 
 ```bash
 cd sep4-react-app
@@ -14,10 +16,8 @@ npm run test
 npm run build
 ```
 
-## Docker
+## Docker deployment
 
 ```bash
 docker compose up --build -d
 ```
-
-See `docs/DEPLOYMENT.md` for deployment options.
