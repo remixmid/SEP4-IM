@@ -7,6 +7,7 @@ import Layout from "../features/layout/components/Layout.jsx";
 import DashboardPage from "../features/zones/pages/DashboardPage.jsx";
 import ViewDataPage from "../features/measurements/pages/ViewDataPage.jsx";
 import RecommendationPage from "../features/recommendations/pages/RecommendationPage.jsx";
+import AutomationHistoryPage from "../features/automation/pages/AutomationHistoryPage.jsx";
 
 export default function App() {
   return (
@@ -15,11 +16,14 @@ export default function App() {
         <Routes>
           <Route path="/login" element={<LoginPage />} />
           <Route path="/register" element={<RegistrationPage />} />
+
           <Route element={<Layout />}>
             <Route path="/main" element={<ProtectedRoute><DashboardPage /></ProtectedRoute>} />
             <Route path="/view-data/:zoneId" element={<ProtectedRoute><ViewDataPage /></ProtectedRoute>} />
             <Route path="/recommendations/:zoneId" element={<ProtectedRoute><RecommendationPage /></ProtectedRoute>} />
+            <Route path="/automation-history/:zoneId" element={<ProtectedRoute><AutomationHistoryPage /></ProtectedRoute>} />
           </Route>
+
           <Route path="*" element={<Navigate to="/login" replace />} />
         </Routes>
       </HashRouter>
