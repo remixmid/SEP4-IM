@@ -7,7 +7,7 @@ import { automationApi } from "../features/automation/api/automationApi.js";
 describe("greenhouse feature flow", () => {
   it("connects zone data, mock IoT, recommendations and automation", async () => {
     const zone = await zonesApi.getZone("zone-tomatoes");
-    const readings = await measurementsApi.getCurrentMeasurements(zone.id);
+    const readings = await measurementsApi.getMeasurements(zone.id);
     const recommendation = await recommendationsApi.getRecommendation(zone.id);
     const actions = await automationApi.getActions(zone.id);
 
