@@ -15,7 +15,7 @@ The project intentionally does not include real IoT hardware or a trained ML mod
 - Suitable and Adjust feedback handling
 - Automation history derived from readings and crop target ranges
 - LocalStorage persistence
-- Vitest tests in every development stage
+- Vitest unit tests
 - Docker and Nginx production image
 - GitHub Actions CI and container publishing
 
@@ -23,11 +23,11 @@ The project intentionally does not include real IoT hardware or a trained ML mod
 
 ```bash
 cd sep4-react-app
-npm ci
+npm install
 npm run dev
 ```
 
-Demo credentials:
+Open the Vite URL and use:
 
 ```text
 demo@greenhouse.local
@@ -37,7 +37,7 @@ demo123
 ## Docker
 
 ```bash
-docker compose up --build -d
+docker compose up --build
 ```
 
 Open `http://localhost:5173`.
@@ -50,10 +50,6 @@ npm run test
 npm run build
 ```
 
-## Development history
+## Scope statement
 
-This repository contains a simulated incremental Git history and six tagged milestones. See `docs/DEVELOPMENT_STAGES.md`.
-
-## Deployment
-
-See `docs/DEPLOYMENT.md` for static, Docker and Linux server deployment instructions.
+The IoT and Machine Learning components are outside this project's scope. Their behavior is simulated through asynchronous mock services. The mock IoT layer provides greenhouse zones, environmental readings and automation events. The mock ML layer uses crop profiles and deterministic rules to produce recommendations and process user feedback.
