@@ -1,22 +1,21 @@
 # Smart Greenhouse Interactive Media
 
-## Stage 4: Mock IoT telemetry
+## Stage 5: Rule-based mock ML
 
-The application now generates current sensor readings and deterministic 24-hour history for temperature, humidity and light. The dashboard and telemetry page display cards, charts and minimum, average and maximum statistics.
+Crop profiles now drive recommendations for temperature, humidity and light. The service is intentionally presented as a mocked ML boundary, while its internal implementation uses deterministic rules. Suitable and Adjust feedback is processed asynchronously.
 
-All prior tests remain present, with new API and statistics tests added for this milestone.
+Tests cover authentication, zones, measurements, summaries, recommendation generation and feedback.
 
-## Run and test
+## Run
 
 ```bash
 cd sep4-react-app
 npm ci
 npm run dev
 npm run test
-npm run build
 ```
 
-## Docker deployment
+## Docker
 
 ```bash
 docker compose up --build -d
